@@ -2,8 +2,6 @@
 
 Modelos `Course` e `Module` (relação 1:N) com Prisma Migrate.
 
-![Prisma Studio](prismastudio.png)
-
 ## Como rodar
 
 ```bash
