@@ -20,3 +20,10 @@ node src/Courses/findById.js ID
 node src/Courses/update.js ID "Novo título" "Nova descrição"
 node src/Courses/delete.js ID
 ```
+## Relacionamento 1:N — Author e Book
+
+Um autor pode ter vários livros. O script cria o autor e já associa um livro na mesma operação (nested write do Prisma).
+
+```bash
+node src/AuthorsBooks/create.js
+```
