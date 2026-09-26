@@ -27,3 +27,13 @@ Um autor pode ter vários livros. O script cria o autor e já associa um livro n
 ```bash
 node src/AuthorsBooks/create.js
 ```
+## Relacionamento N:N — Courses e Modules
+
+Um curso pode ter vários módulos, e um módulo pode pertencer a vários cursos, através da tabela intermediária `CoursesModules`.
+
+```bash
+node src/CoursesModules/create.js              # cria curso, módulo e vínculo
+node src/CoursesModules/createManyToMany.js     # exemplo com módulo compartilhado entre cursos
+node src/CoursesModules/findWithRelations.js    # consulta cursos com seus módulos
+node src/CoursesModules/removeLink.js COURSE_ID MODULE_ID  # remove só o vínculo
+```

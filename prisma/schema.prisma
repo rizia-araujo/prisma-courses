@@ -41,3 +41,23 @@ model Book {
 
   @@index([authorId])
 }
+model CourseN {
+  id      Int              @id @default(autoincrement())
+  title   String
+  modules CoursesModules[]
+}
+
+model ModuleN {
+  id      Int              @id @default(autoincrement())
+  title   String
+  courses CoursesModules[]
+}
+
+model CoursesModules {
+  courseId Int
+  moduleId Int
+  course   CourseN @relation(fields: [courseId], references: [id], onDelete: Cascade)
+  module   ModuleN @relation(fields: [moduleId], references: [id], onDelete: Cascade)
+
+  @@id([courseId, moduleId])
+}
